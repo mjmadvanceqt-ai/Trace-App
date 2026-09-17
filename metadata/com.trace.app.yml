@@ -1,0 +1,38 @@
+Categories:
+  - Sports
+License: GPL-3.0-or-later
+WebSite: https://github.com/mjmadvanceqt-ai/Trace-App
+SourceCode: https://github.com/mjmadvanceqt-ai/Trace-App
+IssueTracker: https://github.com/mjmadvanceqt-ai/Trace-App/issues
+Changelog: https://github.com/mjmadvanceqt-ai/Trace-App/releases
+Donate: https://github.com/mjmadvanceqt-ai/Trace-App
+
+AutoName: Trace
+Summary: Plan, save, run, and share walking routes
+Description: |
+  Trace is a mobile-first walking and route-planning app.
+  .
+  Features include:
+  * Draw routes on OpenStreetMap using Leaflet.
+  * Snap routes to roads with public OSRM-compatible routing services.
+  * Save, plan, run, and share traces.
+  * Track pace and simulate an active run.
+  .
+  Trace is free software released under the GNU General Public License,
+  version 3 or later.
+
+RepoType: git
+Repo: https://github.com/mjmadvanceqt-ai/Trace-App.git
+
+Builds:
+  - versionName: '1.0'
+    versionCode: 1
+    commit: v1.0.0
+    subdir: android
+    gradle:
+      - yes
+    output: app/build/outputs/apk/release/app-release.apk
+
+UpdateCheckMode: Tags
+CurrentVersion: '1.0'
+CurrentVersionCode: 1
