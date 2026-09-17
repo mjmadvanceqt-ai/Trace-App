@@ -8,6 +8,9 @@ android/local.properties
 android/app/build/
 android/app/.cxx/
 android/app/release/
+release-keystore.jks
+*.keystore
+*.jks
 cap-web/
 .vercel/
 .grok/

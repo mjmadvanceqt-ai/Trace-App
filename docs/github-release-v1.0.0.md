@@ -40,5 +40,5 @@ Trace does not require a proprietary map SDK. The app uses OpenStreetMap map til
 After attaching the final signed APK, publish its SHA-256 checksum here:
 
 ```text
-SHA-256: <run Get-FileHash .\\app-release.apk -Algorithm SHA256 and paste the value here>
+SHA-256: 0B4E0F08DB50401475B61DDB86AF3CF14ED11C7D011CE8F29B0505D10CADFB15
 ```

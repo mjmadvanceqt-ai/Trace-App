@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 
+def releaseKeystore = file(System.getenv('TRACE_RELEASE_KEYSTORE') ?: "${rootDir}/../release-keystore.jks")
+def releaseStorePassword = System.getenv('TRACE_RELEASE_STORE_PASSWORD') ?: findProperty('TRACE_RELEASE_STORE_PASSWORD')
+def releaseKeyPassword = System.getenv('TRACE_RELEASE_KEY_PASSWORD') ?: findProperty('TRACE_RELEASE_KEY_PASSWORD')
+def hasReleaseSigning = releaseKeystore.exists() && releaseStorePassword && releaseKeyPassword
+
 android {
     namespace = "com.trace.app"
     compileSdk = rootProject.ext.compileSdkVersion
@@ -16,11 +21,25 @@ android {
             ignoreAssetsPattern = '!.svn:!.git:!.ds_store:!*.scc:.*:!CVS:!thumbs.db:!picasa.ini:!*~'
         }
     }
+    signingConfigs {
+        release {
+            if (hasReleaseSigning) {
+                storeFile releaseKeystore
+                storePassword releaseStorePassword
+                keyAlias 'trace-release'
+                keyPassword releaseKeyPassword
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
+            }
         }
     }
 }
