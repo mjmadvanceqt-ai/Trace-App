@@ -1,0 +1,36 @@
+{
+  "url": "http://127.0.0.1:8080/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "The Trace App",
+      "hasCanvas": false,
+      "bodyTextLen": 680,
+      "bodyTextHash": "042f042aa303605efced424128092c9bf25c59066347a3e2edc525596cd3960a",
+      "bodyTextPrefix": "THE TRACE Draw the run. Hold the pace. Evening, Runner. Pre-trac",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "The Trace App",
+      "hasCanvas": false,
+      "bodyTextLen": 680,
+      "bodyTextHash": "042f042aa303605efced424128092c9bf25c59066347a3e2edc525596cd3960a",
+      "bodyTextPrefix": "THE TRACE Draw the run. Hold the pace. Evening, Runner. Pre-trac",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-preview-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-preview.json"
+}

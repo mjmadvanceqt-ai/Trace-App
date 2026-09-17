@@ -1,0 +1,1181 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Install Capacitor Android tooling",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"install",
+				"@capacitor/core",
+				"@capacitor/android",
+				"@capacitor/cli",
+				"--save"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Create Android project",
+			"type": "shell",
+			"command": "npx.cmd",
+			"args": [
+				"cap",
+				"add",
+				"android"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Repair dependencies",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"ci"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify dependency repair",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"exec",
+				"--",
+				"node",
+				"-e",
+				"console.log(require.resolve('stream-buffers'))"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify dependency repair",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-p",
+				"require.resolve('stream-buffers')"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check repaired module",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"-p",
+				"\"require.resolve('stream-buffers')\""
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Generate Capacitor Android project",
+			"type": "shell",
+			"command": "npx.cmd",
+			"args": [
+				"cap",
+				"add",
+				"android"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install Capacitor packages completely",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"install",
+				"--ignore-scripts"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify Capacitor CLI files",
+			"type": "shell",
+			"command": "Get-ChildItem",
+			"args": [
+				"node_modules\\@capacitor\\cli"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Capacitor CLI package",
+			"type": "shell",
+			"command": "Get-Content",
+			"args": [
+				"node_modules\\@capacitor\\cli\\package.json"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Complete npm dependency install",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npm.cmd install --ignore-scripts"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Capacitor installation state",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"if exist node_modules\\@capacitor\\cli\\package.json (echo CLI_READY) else (echo CLI_MISSING)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check npm processes",
+			"type": "shell",
+			"command": "Get-Process",
+			"args": [
+				"node,npm"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Clear stale Node processes",
+			"type": "shell",
+			"command": "Get-Process",
+			"args": [
+				"node",
+				"-ErrorAction",
+				"SilentlyContinue",
+				"|",
+				"Stop-Process",
+				"-Force"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install Capacitor cleanly",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npm.cmd install @capacitor/core@8.5.2 @capacitor/android@8.5.2 @capacitor/cli@8.5.2 --save"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify Capacitor CLI",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"if exist node_modules\\@capacitor\\cli\\package.json (echo CLI_READY) else (echo CLI_MISSING)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Generate Android project",
+			"type": "shell",
+			"command": "npx.cmd",
+			"args": [
+				"cap",
+				"add",
+				"android"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Capacitor executable",
+			"type": "shell",
+			"command": "Get-Content",
+			"args": [
+				"node_modules\\@capacitor\\cli\\package.json"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Capacitor command shim",
+			"type": "shell",
+			"command": "Get-ChildItem",
+			"args": [
+				"node_modules\\.bin\\cap*"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Generate Android project directly",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"node_modules\\@capacitor\\cli\\bin\\capacitor",
+				"add",
+				"android"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Remove corrupted dependencies",
+			"type": "shell",
+			"command": "Remove-Item",
+			"args": [
+				"-Recurse",
+				"-Force",
+				"node_modules"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Force clean dependencies",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"rmdir /s /q node_modules"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Repair missing Capacitor dependencies",
+			"type": "shell",
+			"command": "npm.cmd",
+			"args": [
+				"install",
+				"@ionic/utils-fs@3.1.0",
+				"fs-extra@11.2.0",
+				"stream-buffers@3.0.2",
+				"--force"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check native dependency files",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"if exist node_modules\\@ionic\\utils-fs\\node_modules\\fs-extra\\lib\\index.js (echo FS_EXTRA_READY) else (echo FS_EXTRA_MISSING) & if exist node_modules\\@capacitor\\cli\\dist\\index.js (echo CAP_READY) else (echo CAP_MISSING)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Finish dependency installation",
+			"type": "shell",
+			"command": "$p = Start-Process",
+			"args": [
+				"npm.cmd",
+				"-ArgumentList",
+				"install @capacitor/core@8.5.2 @capacitor/android@8.5.2 @capacitor/cli@8.5.2 --force",
+				"-Wait",
+				"-PassThru",
+				"-NoNewWindow",
+				";",
+				"Write-Output",
+				"(\"NPM_EXIT=\" + $p.ExitCode)",
+				";",
+				"if (Test-Path \"node_modules\\@capacitor\\cli\\package.json\") { Write-Output \"CAPACITOR_READY\" } else { Write-Output \"CAPACITOR_MISSING\" }"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Finish dependency installation",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-Command",
+				"$p = Start-Process npm.cmd -ArgumentList 'install @capacitor/core@8.5.2 @capacitor/android@8.5.2 @capacitor/cli@8.5.2 --force' -Wait -PassThru -NoNewWindow; Write-Output ('NPM_EXIT=' + $p.ExitCode); if (Test-Path 'node_modules\\@capacitor\\cli\\package.json') { Write-Output 'CAPACITOR_READY' } else { Write-Output 'CAPACITOR_MISSING' }"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Run blocking Capacitor install",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-ExecutionPolicy",
+				"Bypass",
+				"-File",
+				"scripts\\install-capacitor.ps1"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Capacitor install completion",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"if exist node_modules\\@capacitor\\cli\\package.json (echo CAPACITOR_READY) else (echo CAPACITOR_MISSING) & if exist node_modules\\@ionic\\utils-fs\\node_modules\\fs-extra\\lib\\index.js (echo FS_EXTRA_READY) else (echo FS_EXTRA_MISSING)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check install processes",
+			"type": "shell",
+			"command": "Get-Process",
+			"args": [
+				"npm,node,powershell",
+				"-ErrorAction",
+				"SilentlyContinue"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Capacitor install completion",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"if exist node_modules\\@capacitor\\cli\\package.json (echo CAPACITOR_READY) else (echo CAPACITOR_MISSING) & if exist node_modules\\@ionic\\utils-fs\\node_modules\\fs-extra\\lib\\index.js (echo FS_EXTRA_READY) else (echo FS_EXTRA_MISSING)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check package install markers",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"dir /b node_modules\\@capacitor\\cli\\package.json node_modules\\@ionic\\utils-fs\\node_modules\\fs-extra\\lib\\index.js 2>nul"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Stop stale npm workers",
+			"type": "shell",
+			"command": "Get-Process npm -ErrorAction SilentlyContinue | Stop-Process -Force",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Remove node modules cleanly",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"rmdir /s /q node_modules"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Clean install all dependencies",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npm.cmd",
+				"ci"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check clean install completion",
+			"type": "shell",
+			"command": "Get-Process npm,node -ErrorAction SilentlyContinue | Select-Object Name,Id,CPU",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check clean install files",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"if exist node_modules\\@capacitor\\cli\\package.json (echo CLI_READY) else (echo CLI_MISSING)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check clean install status",
+			"type": "shell",
+			"command": "Get-Process node -ErrorAction SilentlyContinue | Select-Object Name,Id,CPU,StartTime",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check clean install status",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"if exist node_modules\\.package-lock.json (echo INSTALL_LOCK_READY) else (echo INSTALL_RUNNING)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect install lock unique",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"if exist node_modules\\.package-lock.json (echo INSTALL_LOCK_READY) else (echo INSTALL_RUNNING)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect install process unique",
+			"type": "shell",
+			"command": "Get-Process node -ErrorAction SilentlyContinue | Select-Object Id,CPU,Responding,StartTime",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect install package count",
+			"type": "shell",
+			"command": "(Get-ChildItem node_modules -Force -ErrorAction SilentlyContinue | Measure-Object).Count",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify install finished unique",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"if exist node_modules\\.package-lock.json (echo LOCK_READY) else (echo LOCK_PENDING) & if exist node_modules\\@capacitor\\cli\\package.json (echo CAP_READY) else (echo CAP_PENDING) & if exist node_modules\\@ionic\\utils-fs\\node_modules\\fs-extra\\lib\\index.js (echo NESTED_FS_READY) else (echo NESTED_FS_PENDING)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect npm cache logs unique",
+			"type": "shell",
+			"command": "Get-ChildItem \"$env:LOCALAPPDATA\\npm-cache\\_logs\" -File | Sort-Object LastWriteTime | Select-Object -Last 3 Name,Length,LastWriteTime",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect active Node command unique",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process -Filter \"ProcessId=15444\" | Select-Object ProcessId,CommandLine",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect active Node command full",
+			"type": "shell",
+			"command": "(Get-CimInstance Win32_Process -Filter \"ProcessId=15444\").CommandLine",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check npm install log unique",
+			"type": "shell",
+			"command": "Get-Content \"$env:LOCALAPPDATA\\npm-cache\\_logs\\2026-09-16T00_28_36_786Z-debug-0.log\" -Tail 20",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check npm install progress unique",
+			"type": "shell",
+			"command": "Get-Content \"$env:LOCALAPPDATA\\npm-cache\\_logs\\2026-09-16T00_28_36_786Z-debug-0.log\" -Tail 8",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check npm process after registry fetch unique",
+			"type": "shell",
+			"command": "Get-Process node -ErrorAction SilentlyContinue | Select-Object Id,CPU,Responding,StartTime",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check npm log timestamp unique",
+			"type": "shell",
+			"command": "Get-Item \"$env:LOCALAPPDATA\\npm-cache\\_logs\\2026-09-16T00_28_36_786Z-debug-0.log\" | Select-Object Length,LastWriteTime",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check npm log tail later unique",
+			"type": "shell",
+			"command": "Get-Content \"$env:LOCALAPPDATA\\npm-cache\\_logs\\2026-09-16T00_28_36_786Z-debug-0.log\" -Tail 12",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check npm registry progress unique",
+			"type": "shell",
+			"command": "Get-Item \"$env:LOCALAPPDATA\\npm-cache\\_logs\\2026-09-16T00_28_36_786Z-debug-0.log\" | Select-Object Length,LastWriteTime; Get-Process node -ErrorAction SilentlyContinue | Select-Object Id,CPU,Responding",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify clean install completed unique",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"if exist node_modules\\.package-lock.json (echo LOCK_READY) else (echo LOCK_MISSING) & if exist node_modules\\@capacitor\\cli\\package.json (echo CAP_READY) else (echo CAP_MISSING) & if exist node_modules\\@ionic\\utils-fs\\node_modules\\fs-extra\\lib\\index.js (echo NESTED_FS_READY) else (echo NESTED_FS_MISSING)"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Read clean install result unique",
+			"type": "shell",
+			"command": "Get-Content \"$env:LOCALAPPDATA\\npm-cache\\_logs\\2026-09-16T00_28_36_786Z-debug-0.log\" -Tail 40",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install missing Capacitor packages unique",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npm.cmd install --no-audit --no-fund --ignore-scripts @capacitor/core@8.5.2 @capacitor/android@8.5.2 @capacitor/cli@8.5.2"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Capacitor install progress unique",
+			"type": "shell",
+			"command": "Get-Process node -ErrorAction SilentlyContinue | Select-Object Id,CPU,Responding; if (Test-Path 'node_modules\\@capacitor\\cli\\package.json') { 'CAP_READY' } else { 'CAP_PENDING' }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect npm processes unique",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'node.exe' } | Select-Object ProcessId,CommandLine",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect npm process commands unique",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'node.exe' } | ForEach-Object { $_.CommandLine }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Stop stale npm ci only",
+			"type": "shell",
+			"command": "Stop-Process -Id 15444 -Force",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify Capacitor install after cleanup unique",
+			"type": "shell",
+			"command": "Get-Process node -ErrorAction SilentlyContinue | Select-Object Id,CPU; if (Test-Path 'node_modules\\@capacitor\\cli\\package.json') { 'CAP_READY' } else { 'CAP_PENDING' }; if (Test-Path 'node_modules\\@ionic\\utils-fs\\node_modules\\fs-extra\\lib\\index.js') { 'FS_READY' } else { 'FS_PENDING' }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Confirm npm workers unique",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'node.exe' } | Select-Object ProcessId,CommandLine",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Confirm npm worker commands unique",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'node.exe' } | ForEach-Object { Write-Output ($_.ProcessId.ToString() + ' ' + $_.CommandLine) }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Generate Android project final",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"node_modules\\@capacitor\\cli\\bin\\capacitor",
+				"add",
+				"android"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install Capacitor CLI runtime dependency",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npm.cmd",
+				"install",
+				"--no-audit",
+				"--no-fund",
+				"--ignore-scripts",
+				"rimraf@6.0.1"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Stop all npm workers for clean retry",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'node.exe' -and $_.CommandLine -match 'npm-cli.js' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install all native runtime packages single",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npm.cmd",
+				"install",
+				"--no-audit",
+				"--no-fund",
+				"--ignore-scripts",
+				"@capacitor/core@8.5.2",
+				"@capacitor/android@8.5.2",
+				"@capacitor/cli@8.5.2",
+				"rimraf@6.0.1"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Generate Android project clean",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"node_modules\\@capacitor\\cli\\bin\\capacitor",
+				"add",
+				"android"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "List generated assets",
+			"type": "shell",
+			"command": "Get-ChildItem",
+			"args": [
+				".vercel\\output\\static\\assets"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Identify client entry assets",
+			"type": "shell",
+			"command": "Get-ChildItem",
+			"args": [
+				".vercel\\output\\static\\assets",
+				"-File",
+				"|",
+				"ForEach-Object",
+				"{",
+				"Write-Output",
+				"($_.Name + ' ' + $_.Length)",
+				"}"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Prepare Capacitor web bundle",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"xcopy /e /i /y .vercel\\output\\static\\assets cap-web\\assets >nul & xcopy /e /i /y .vercel\\output\\static\\__grok cap-web\\__grok >nul & copy /y public\\favicon.svg cap-web\\favicon.svg >nul & echo CAP_WEB_READY"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Sync Android project",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"node_modules\\@capacitor\\cli\\bin\\capacitor",
+				"sync",
+				"android"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Android Java SDK unique",
+			"type": "shell",
+			"command": "Get-Command java,adb,sdkmanager -ErrorAction SilentlyContinue | Select-Object Name,Source; Write-Output ('JAVA_HOME=' + $env:JAVA_HOME); Write-Output ('ANDROID_HOME=' + $env:ANDROID_HOME); Write-Output ('ANDROID_SDK_ROOT=' + $env:ANDROID_SDK_ROOT)",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Android Gradle wrapper unique",
+			"type": "shell",
+			"command": "Get-ChildItem android -Force | Select-Object Name,Length; Get-Content android\\gradle\\wrapper\\gradle-wrapper.properties",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Android devices unique",
+			"type": "shell",
+			"command": "adb devices",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Android SDK requirement",
+			"type": "shell",
+			"command": "Get-Content",
+			"args": [
+				"android\\variables.gradle"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Install Android SDK components",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-ExecutionPolicy",
+				"Bypass",
+				"-File",
+				"scripts\\setup-android-sdk.ps1"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect local Android SDK",
+			"type": "shell",
+			"command": "Get-ChildItem android-sdk -Recurse -File -ErrorAction SilentlyContinue | Select-Object -First 20 FullName,Length",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect SDK installer process",
+			"type": "shell",
+			"command": "Get-Process powershell,java -ErrorAction SilentlyContinue | Select-Object Name,Id,CPU,Responding",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect SDK download state",
+			"type": "shell",
+			"command": "Get-ChildItem \"$env:TEMP\\commandlinetools-win.zip\" -ErrorAction SilentlyContinue | Select-Object Length,LastWriteTime; Get-ChildItem android-sdk -Force -ErrorAction SilentlyContinue | Select-Object Name",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect SDK bootstrap command",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'setup-android-sdk|commandlinetools' } | Select-Object ProcessId,CommandLine",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect SDK bootstrap commands",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'setup-android-sdk|commandlinetools' } | ForEach-Object { Write-Output ($_.ProcessId.ToString() + ' ' + $_.CommandLine) }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check SDK bootstrap completion",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'setup-android-sdk.ps1' } | Select-Object ProcessId,CommandLine; Get-ChildItem android-sdk -Recurse -File -ErrorAction SilentlyContinue | Where-Object { $_.Name -in @('sdkmanager.bat','adb.exe','aapt2.exe') } | Select-Object FullName,Length",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect SDK directories",
+			"type": "shell",
+			"command": "Get-ChildItem android-sdk -Recurse -Directory -ErrorAction SilentlyContinue | Select-Object -First 30 FullName",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Stop stalled SDK bootstrap",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.CommandLine -match 'setup-android-sdk.ps1' } | ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Extract Android command tools",
+			"type": "shell",
+			"command": "$sdk = Join-Path $PWD 'android-sdk'; $zip = Join-Path $env:TEMP 'commandlinetools-win.zip'; $temp = Join-Path $env:TEMP 'android-cmdline-manual'; Remove-Item $temp -Recurse -Force -ErrorAction SilentlyContinue; Remove-Item $sdk -Recurse -Force -ErrorAction SilentlyContinue; Expand-Archive -Path $zip -DestinationPath $temp -Force; New-Item -ItemType Directory -Force -Path (Join-Path $sdk 'cmdline-tools\\latest') | Out-Null; Copy-Item (Join-Path $temp 'cmdline-tools\\*') (Join-Path $sdk 'cmdline-tools\\latest') -Recurse -Force; Write-Output 'SDK_TOOLS_EXTRACTED'",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect command tools archive layout",
+			"type": "shell",
+			"command": "Get-ChildItem \"$env:TEMP\\android-cmdline-manual\" -Recurse -File | Select-Object -First 10 FullName",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Android tools archive",
+			"type": "shell",
+			"command": "Get-Item \"$env:TEMP\\commandlinetools-win.zip\" | Select-Object Length; Expand-Archive -Path \"$env:TEMP\\commandlinetools-win.zip\" -DestinationPath \"$env:TEMP\\android-cmdline-check\" -Force; Get-ChildItem \"$env:TEMP\\android-cmdline-check\" -Force -Recurse | Select-Object -First 20 FullName",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check extracted SDK files",
+			"type": "shell",
+			"command": "Get-ChildItem \"$env:TEMP\\android-cmdline-check\" -Force -ErrorAction SilentlyContinue | Select-Object Name,Mode; Get-ChildItem \"$env:TEMP\\android-cmdline-check\" -Recurse -File -ErrorAction SilentlyContinue | Measure-Object",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Find installed Android SDK candidates",
+			"type": "shell",
+			"command": "$paths = @(\"$env:LOCALAPPDATA\\Android\\Sdk\",\"$env:USERPROFILE\\AppData\\Local\\Android\\Sdk\",\"C:\\Android\\Sdk\",\"C:\\Program Files\\Android\\Android Studio\"); foreach ($path in $paths) { if (Test-Path $path) { Write-Output $path } }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Find installed Android SDK clean",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-ExecutionPolicy",
+				"Bypass",
+				"-File",
+				"scripts\\find-android.ps1"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect installed Android SDK clean",
+			"type": "shell",
+			"command": "$sdk = Join-Path $env:LOCALAPPDATA 'Android\\Sdk'; Get-ChildItem $sdk -Force | Select-Object Name; Get-ChildItem $sdk -Recurse -File -ErrorAction SilentlyContinue | Where-Object Name -in @('adb.exe','sdkmanager.bat','aapt2.exe') | Select-Object FullName",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Android SDK versions clean",
+			"type": "shell",
+			"command": "Get-ChildItem (Join-Path $env:LOCALAPPDATA 'Android\\Sdk\\platforms') -Directory; Get-ChildItem (Join-Path $env:LOCALAPPDATA 'Android\\Sdk\\build-tools') -Directory; Test-Path (Join-Path $env:LOCALAPPDATA 'Android\\Sdk\\platform-tools\\adb.exe')",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build Android debug APK",
+			"type": "shell",
+			"command": "powershell.exe",
+			"args": [
+				"-NoProfile",
+				"-ExecutionPolicy",
+				"Bypass",
+				"-File",
+				"scripts\\build-android.ps1"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Gradle build process",
+			"type": "shell",
+			"command": "Get-Process java,gradle -ErrorAction SilentlyContinue | Select-Object Name,Id,CPU,Responding",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check APK output while Gradle runs",
+			"type": "shell",
+			"command": "Get-ChildItem android\\app\\build\\outputs\\apk\\debug -ErrorAction SilentlyContinue | Select-Object Name,Length,LastWriteTime",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Gradle progress log",
+			"type": "shell",
+			"command": "Get-ChildItem \"$env:USERPROFILE\\.gradle\\daemon\" -Recurse -File -ErrorAction SilentlyContinue | Sort-Object LastWriteTime | Select-Object -Last 3 FullName,Length,LastWriteTime",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Gradle build completion",
+			"type": "shell",
+			"command": "Get-ChildItem android\\app\\build -Recurse -File -ErrorAction SilentlyContinue | Where-Object Name -match 'apk|mapping' | Select-Object FullName,Length,LastWriteTime; Get-Process java -ErrorAction SilentlyContinue | Select-Object Id,CPU,Responding",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Monitor Gradle build unique",
+			"type": "shell",
+			"command": "Get-Process java -ErrorAction SilentlyContinue | Select-Object Id,CPU,Responding; Get-ChildItem android\\app\\build\\outputs\\apk\\debug -ErrorAction SilentlyContinue | Select-Object Name,Length",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Gradle daemon log unique",
+			"type": "shell",
+			"command": "Get-ChildItem \"$env:USERPROFILE\\.gradle\\daemon\\8.14.3\" -Filter '*.out.log' | Sort-Object LastWriteTime | Select-Object -Last 1 | ForEach-Object { Get-Content $_.FullName -Tail 30 }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Gradle daemon latest progress",
+			"type": "shell",
+			"command": "$log = Get-ChildItem \"$env:USERPROFILE\\.gradle\\daemon\\8.14.3\" -Filter '*.out.log' | Sort-Object LastWriteTime | Select-Object -Last 1; Get-Content $log.FullName -Tail 50",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check APK output final unique",
+			"type": "shell",
+			"command": "Get-ChildItem android\\app\\build\\outputs\\apk -Recurse -File -ErrorAction SilentlyContinue | Select-Object FullName,Length,LastWriteTime; Get-Process java -ErrorAction SilentlyContinue | Select-Object Id,CPU,Responding",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Java build commands final",
+			"type": "shell",
+			"command": "Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'java.exe' } | ForEach-Object { Write-Output ($_.ProcessId.ToString() + ' ' + $_.CommandLine) }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check Gradle dependency cache final",
+			"type": "shell",
+			"command": "Get-ChildItem \"$env:USERPROFILE\\.gradle\\caches\\modules-2\\files-2.1\" -ErrorAction SilentlyContinue | Measure-Object; Get-ChildItem \"$env:USERPROFILE\\.gradle\\caches\\modules-2\\files-2.1\" -Recurse -File -ErrorAction SilentlyContinue | Sort-Object LastWriteTime | Select-Object -Last 5 FullName,Length,LastWriteTime",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect Gradle errors final",
+			"type": "shell",
+			"command": "$log = 'C:\\Users\\micha\\.gradle\\daemon\\8.14.3\\daemon-13892.out.log'; Select-String -Path $log -Pattern 'ERROR|Exception|Could not|Downloading|timeout' | Select-Object -Last 20",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Stop stalled Gradle build",
+			"type": "shell",
+			"command": "Stop-Process -Id 13656,13892 -Force -ErrorAction SilentlyContinue",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build Android APK offline",
+			"type": "shell",
+			"command": "$sdk = Join-Path $env:LOCALAPPDATA 'Android\\Sdk'; $env:ANDROID_HOME = $sdk; $env:ANDROID_SDK_ROOT = $sdk; Push-Location android; try { & .\\gradlew.bat assembleDebug --no-daemon --offline --stacktrace } finally { Pop-Location }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify APK artifact",
+			"type": "shell",
+			"command": "Get-Item android\\app\\build\\outputs\\apk\\debug\\app-debug.apk | Select-Object FullName,Length,LastWriteTime; Get-FileHash android\\app\\build\\outputs\\apk\\debug\\app-debug.apk -Algorithm SHA256",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Check connected Android device",
+			"type": "shell",
+			"command": "$adb = Join-Path $env:LOCALAPPDATA 'Android\\Sdk\\platform-tools\\adb.exe'; & $adb devices -l",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect APK identity",
+			"type": "shell",
+			"command": "$sdk = Join-Path $env:LOCALAPPDATA 'Android\\Sdk'; $aapt = Join-Path $sdk 'build-tools\\36.0.0\\aapt2.exe'; if (Test-Path $aapt) { & $aapt dump packagename android\\app\\build\\outputs\\apk\\debug\\app-debug.apk } else { Get-ChildItem (Join-Path $sdk 'build-tools') -Recurse -Filter aapt2.exe | Select-Object -First 1 -ExpandProperty FullName }",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Publish APK artifact",
+			"type": "shell",
+			"command": "New-Item -ItemType Directory -Force artifacts\\android | Out-Null; Copy-Item android\\app\\build\\outputs\\apk\\debug\\app-debug.apk artifacts\\android\\trace-debug.apk -Force; Get-Item artifacts\\android\\trace-debug.apk | Select-Object FullName,Length; Get-FileHash artifacts\\android\\trace-debug.apk -Algorithm SHA256",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Final APK verification",
+			"type": "shell",
+			"command": "$apk = (Resolve-Path artifacts\\android\\trace-debug.apk).Path; $hash = (Get-FileHash $apk -Algorithm SHA256).Hash; Write-Output ('APK_PATH=' + $apk); Write-Output ('APK_BYTES=' + (Get-Item $apk).Length); Write-Output ('APK_SHA256=' + $hash)",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Final Android device check",
+			"type": "shell",
+			"command": "$adb = Join-Path $env:LOCALAPPDATA 'Android\\Sdk\\platform-tools\\adb.exe'; & $adb devices",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Validate package manifest",
+			"type": "shell",
+			"command": "node -e \"const p=require('./package.json'); console.log(p.scripts['android:sync']); console.log(p.scripts['android:build']); console.log(p.dependencies['@capacitor/android']);\"",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Final project state check",
+			"type": "shell",
+			"command": "Select-String -Path package.json -Pattern 'android:sync|android:build|@capacitor/android'; Test-Path capacitor.config.ts; Test-Path android\\app\\build\\outputs\\apk\\debug\\app-debug.apk; Test-Path scripts\\setup-android-sdk.ps1; Test-Path scripts\\find-android.ps1",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Build client-only mobile bundle",
+			"type": "shell",
+			"command": "npx.cmd",
+			"args": [
+				"vite",
+				"build",
+				"--config",
+				"vite.mobile.config.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Rebuild client-only mobile bundle",
+			"type": "shell",
+			"command": "npx.cmd",
+			"args": [
+				"vite",
+				"build",
+				"--config",
+				"vite.mobile.config.ts"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Sync corrected mobile bundle",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"node_modules\\@capacitor\\cli\\bin\\capacitor",
+				"sync",
+				"android"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Verify corrected APK package",
+			"type": "shell",
+			"command": "$apk = 'android\\app\\build\\outputs\\apk\\debug\\app-debug.apk'; Copy-Item $apk artifacts\\android\\trace-debug.apk -Force; Get-FileHash artifacts\\android\\trace-debug.apk -Algorithm SHA256; Get-Item artifacts\\android\\trace-debug.apk | Select-Object FullName,Length",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect packaged web entry",
+			"type": "shell",
+			"command": "Get-Content android\\app\\src\\main\\assets\\public\\index.html; Get-ChildItem android\\app\\src\\main\\assets\\public\\assets -File | Select-Object Name,Length",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Inspect APK package id",
+			"type": "shell",
+			"command": "$sdk = Join-Path $env:LOCALAPPDATA 'Android\\Sdk'; $aapt = Get-ChildItem (Join-Path $sdk 'build-tools') -Recurse -Filter aapt2.exe | Sort-Object FullName -Descending | Select-Object -First 1 -ExpandProperty FullName; & $aapt dump packagename android\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+			"isBackground": false,
+			"problemMatcher": []
+		},
+		{
+			"label": "Serve mobile bundle for smoke check",
+			"type": "shell",
+			"command": "python",
+			"args": [
+				"-m",
+				"http.server",
+				"4173",
+				"--directory",
+				"cap-web"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Serve mobile bundle for smoke check",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/serve-mobile.mjs"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Serve corrected mobile bundle",
+			"type": "shell",
+			"command": "node",
+			"args": [
+				"scripts/serve-mobile.mjs"
+			],
+			"isBackground": true,
+			"problemMatcher": []
+		},
+		{
+			"label": "Clean obsolete mobile output and publish APK",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"rmdir /s /q mobile\\cap-web 2>nul & copy /y android\\app\\build\\outputs\\apk\\debug\\app-debug.apk artifacts\\android\\trace-debug.apk >nul & certutil -hashfile artifacts\\android\\trace-debug.apk SHA256"
+			],
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}

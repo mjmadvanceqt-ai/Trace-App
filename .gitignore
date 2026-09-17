@@ -1,0 +1,13 @@
+node_modules/
+.vite/
+.cache/
+.git/
+.DS_Store
+android/.gradle/
+android/local.properties
+android/app/build/
+android/app/.cxx/
+android/app/release/
+cap-web/
+.vercel/
+.grok/
